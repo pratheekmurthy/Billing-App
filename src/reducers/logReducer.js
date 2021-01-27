@@ -8,7 +8,6 @@ const logReducer=(state=initialState,action)=>{
         default :{
             return state
         }
-
     }
 
 }

@@ -6,6 +6,8 @@ const login =() =>{
         return {type : 'TOGGLE_STATE'}
 }
 
+
+
 export const formSubmit =(data,handleRedirect)=>{
     return(dispatch)=>{
         console.log("i am in genearator")
@@ -27,14 +29,13 @@ export const formSubmit =(data,handleRedirect)=>{
 
 export const loginformSubmit =(data,handleRedirect)=>{
     return(dispatch)=>{
-        console.log(data,"i am in gen")
         axios.post("http://dct-billing-app.herokuapp.com/api/users/login",data)
         .then((response)=>{
             const result = response.data
             if(result.hasOwnProperty('errors')) {
                 alert(result.message)
             }else{
-                dispatch(login)
+                dispatch(login())
                 localStorage.setItem('token',result.token)
             handleRedirect()
             swal("cool", "You have loggedIN successfully!", "success")
@@ -46,3 +47,6 @@ export const loginformSubmit =(data,handleRedirect)=>{
     }
 
     }
+export const toggleStatus=()=>{
+    return {type : 'TOGGLE_STATE'}
+}

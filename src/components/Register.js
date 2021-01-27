@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {useDispatch,useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import validator from 'validator'
 import {formSubmit} from '../actions/loginAction'
 
