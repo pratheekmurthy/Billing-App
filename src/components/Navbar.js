@@ -17,10 +17,10 @@ const Navbar=(props)=>{
 
     return (<div>
        <div>
-       <Link to="/">Home</Link>|
-
-        {loggedIn ? (
-        <div><Link to="/account">Account</Link>|
+       {loggedIn ? (
+        <div>
+            <Link to="/">Home</Link>|
+            <Link to="/account">Account</Link>|
             <Link to="/customers">Customers</Link>|
             <Link to="/products">Products</Link>|
             <Link to="/" onClick={()=>{
@@ -32,6 +32,7 @@ const Navbar=(props)=>{
         :
         (
         <div>
+             <Link to="/">Home</Link>|
             <Link to="register">Register</Link>|
             <Link to="/login">LogIn</Link></div>)}
         

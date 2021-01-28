@@ -10,7 +10,6 @@ const login =() =>{
 
 export const formSubmit =(data,handleRedirect)=>{
     return(dispatch)=>{
-        console.log("i am in genearator")
         axios.post("http://dct-billing-app.herokuapp.com/api/users/register",data)
         .then((response)=>{
             const result = response.data

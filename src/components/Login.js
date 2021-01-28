@@ -32,7 +32,6 @@ const Login =(props)=>{
 
     const handleSubmit =(e)=>{
         e.preventDefault()
-        console.log("i am here")
         runValidations()
         if(Object.keys(errors).length === 0) {
             setFormErrors({})
