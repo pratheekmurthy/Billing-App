@@ -6,9 +6,9 @@ import Home from './Home'
 import Login from './Login'
 import Register from './Register'
 import Account from './Account'
-import Customers from './Customers'
-import Products from './Products'
+import Customers from '../components/customers/Customers'
 import swal from 'sweetalert'
+import ProductsContainer from './products/ProductsContainer'
 
 const Navbar=(props)=>{
     const loggedIn = useSelector(state => state.log)
@@ -43,7 +43,7 @@ const Navbar=(props)=>{
             <Route path="/login"  component={Login} exact={true}/>
             <Route path="/Account"  component={Account} exact={true}/>
             <Route path="/customers"  component={Customers} exact={true}/>
-            <Route path="/products"  component={Products} exact={true}/>
+            <Route path="/products"  component={ProductsContainer} exact={true}/>
             
         </div>
     </div>

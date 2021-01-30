@@ -1,9 +1,11 @@
 import {combineReducers,createStore,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import logReducer from '../reducers/logReducer'
+import customersReducer from '../reducers/customerReducer'
 
 const root = {
     log : logReducer,
+    customers: customersReducer
 }
 
 const configureStore =()=>{

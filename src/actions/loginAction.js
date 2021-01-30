@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../config/axios'
 import swal from 'sweetalert'
 
 
@@ -10,7 +10,7 @@ const login =() =>{
 
 export const formSubmit =(data,handleRedirect)=>{
     return(dispatch)=>{
-        axios.post("http://dct-billing-app.herokuapp.com/api/users/register",data)
+        axios.post("/users/register",data)
         .then((response)=>{
             const result = response.data
             if(result.hasOwnProperty('errors')) {
@@ -28,7 +28,7 @@ export const formSubmit =(data,handleRedirect)=>{
 
 export const loginformSubmit =(data,handleRedirect)=>{
     return(dispatch)=>{
-        axios.post("http://dct-billing-app.herokuapp.com/api/users/login",data)
+        axios.post("/users/login",data)
         .then((response)=>{
             const result = response.data
             if(result.hasOwnProperty('errors')) {
