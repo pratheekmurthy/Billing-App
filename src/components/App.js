@@ -10,9 +10,8 @@ const App=(props)=>{
   const dispatch = useDispatch()
 
   useEffect(()=>{
-    if(localStorage.getItem('token')){
-      dispatch(toggleStatus())
-    }
+    if(localStorage.getItem('token'))
+    dispatch(toggleStatus())
   },[])
 
 

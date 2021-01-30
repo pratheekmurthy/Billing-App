@@ -2,10 +2,12 @@ import {combineReducers,createStore,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import logReducer from '../reducers/logReducer'
 import customersReducer from '../reducers/customerReducer'
+import productsReducer from '../reducers/productsReducer'
 
 const root = {
     log : logReducer,
-    customers: customersReducer
+    customers: customersReducer,
+    products: productsReducer
 }
 
 const configureStore =()=>{

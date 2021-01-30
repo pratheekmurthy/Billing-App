@@ -1,12 +1,12 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React,{useEffect} from 'react'
+import { useSelector,useDispatch } from 'react-redux'
+import {startGetAllProd} from '../../actions/products-actions'
 import ProductItem from './ProductItem'
 
 const ProductsList = (props) => {
     
     const products = useSelector(state => state.products)
-
-
+    
     return (
         <div>
             {products.length === 0 ? (
@@ -25,7 +25,7 @@ const ProductsList = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        <ProductItem />
+                    <ProductItem />
                     </tbody>
                     </table>
                 </div> 

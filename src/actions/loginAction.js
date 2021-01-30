@@ -46,6 +46,7 @@ export const loginformSubmit =(data,handleRedirect)=>{
     }
 
     }
-export const toggleStatus=()=>{
+
+    export const toggleStatus=()=>{
     return {type : 'TOGGLE_STATE'}
 }

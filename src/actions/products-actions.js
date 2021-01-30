@@ -54,6 +54,7 @@ const editProd = (prod) => {
 
 
 export const startPostProd = (prod) => {
+    console.log(prod);
     return (dispatch) => {
         axios.post('/products',prod,{
             headers: {
@@ -62,6 +63,7 @@ export const startPostProd = (prod) => {
         })
         .then((response) => {
             const result = response.data 
+            console.log(result)
             if(result.hasOwnProperty('errors')) {
                 alert(result.errors)
             } else {

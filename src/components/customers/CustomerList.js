@@ -4,7 +4,9 @@ import CustomerItem from './CustomerItem'
 
 const CustomersList = (props) => {
     
+
     const customers = useSelector(state => state.customers)
+    
     
 
     return (
