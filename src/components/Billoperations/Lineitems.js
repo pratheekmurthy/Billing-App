@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import {addLineItems,CreateBill} from '../../actions/billAction'
 import BillDetails from './BillDetails'
+import swal from 'sweet-alert'
 
 const Lineitems =(props)=>{
     const {customerId,date} = props

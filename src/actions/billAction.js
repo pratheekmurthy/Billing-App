@@ -1,4 +1,5 @@
 import axios from "../config/axios";
+import swal from 'sweet-alert'
 
 
 // Add lineItems
@@ -61,3 +62,24 @@ export const startGetAllBill = () => {
       .catch((err) => alert(err.message));
   };
 };
+
+// delete a bill
+const deleteBill = (data) => {
+    return { type: "DELETE_BILL", payload: data };
+  };
+export const startDeleteBill = (id) => {
+    return (dispatch) => {
+      axios
+        .delete(`/bills/${id}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((response) => {
+          const result = response.data;
+          dispatch(deleteBill(result));
+          swal("hey", "you have removed this bill successfully", "success");
+        })
+        .catch((err) => alert(err.message));
+    };
+  };
