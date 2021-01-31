@@ -88,7 +88,9 @@ export const startGetProd = (id) => {
             if(result.hasOwnProperty('errors')) {
                 alert(result.errors)
             }else{
-                alert(result.name)
+                alert(`Product Name - ${result.name}
+                    Product Price - ${result.price}
+                    Product created on -${result.createdAt}`)
             }
         })
         .catch((err) => {

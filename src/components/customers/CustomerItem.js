@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+
 import { startGetCust, startDeleteCust } from '../../actions/customerActions'
 import Modal from 'react-modal'
+import EditIcon from '@material-ui/icons/Edit'
+import DeleteIcon from '@material-ui/icons/Delete'
+import VisibilityIcon from '@material-ui/icons/Visibility';
 import CustomerForm from './CustomerForm'
 
 const CustomerItem = (props) => {
@@ -10,6 +14,7 @@ const CustomerItem = (props) => {
     const [name, setName] = useState('')
     const [mobile, setMobile] = useState('')
     const [email, setEmail] = useState('')
+    const [candidate,setCandidate]= useState()
 
     const customers = useSelector(state => state.customers)
     const dispatch = useDispatch()
@@ -37,17 +42,15 @@ const CustomerItem = (props) => {
             {customers.map((customer) => {
                 return <tr key={customer._id}>
                             <td> {customer.name} </td>
-                            <td> {customer.mobile} </td>
-                            <td> {customer.email} </td>
                             <td><button  onClick={() => {
                                 dispatch(startGetCust(customer._id))
-                            }}>View</button></td>
+                            }}><VisibilityIcon/></button></td>
                             <td><button onClick={() => {
                                 handleEdit(customer)
-                            }}>edit</button></td>
+                            }}><EditIcon/></button></td>
                             <td><button onClick={() => {
                                 deleteCustomer(customer._id)
-                            }}>delete</button></td>
+                            }}><DeleteIcon/></button></td>
                         </tr>
             })}
 

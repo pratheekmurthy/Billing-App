@@ -3,10 +3,7 @@ import { useSelector } from 'react-redux'
 import CustomerItem from './CustomerItem'
 
 const CustomersList = (props) => {
-    
-
     const customers = useSelector(state => state.customers)
-    
     
 
     return (
@@ -16,15 +13,10 @@ const CustomersList = (props) => {
             ) : (
                 <div>
                 <h2>No of Customers - { customers.length } </h2>
-                <table border='1'>
+                <table>
                     <thead>
                         <tr>
                             <th>Customer Name</th>
-                            <th>Mobile</th>
-                            <th>E-mail</th>
-                            <th>View</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>

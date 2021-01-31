@@ -1,7 +1,17 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+// import {formWrapper} from '../../styling/app-styled'
+import styled from 'styled-components'
+import {Paper,Box} from '@material-ui/core' 
 import { startEditProd, startPostProd } from '../../actions/products-actions'
 
+
+const formWrapper = styled.div`
+    display : flex;
+    height : 50%;
+    width : 50%;
+    background-color : blue;
+`;
 const ProductForm = (props) => {
     const { id, name: prodName , price: prodPrice, handleToggle } = props 
     const dispatch = useDispatch()
@@ -69,7 +79,10 @@ const ProductForm = (props) => {
 
     return (
         <div>
-            <h1>Add Product</h1>
+             <formWrapper>
+            <Paper elevation={3} variant="outlined" square >
+           
+            <h3>Add Product</h3>
             <form onSubmit={handleSubmit}>
                 <input 
                     type='text'
@@ -102,7 +115,12 @@ const ProductForm = (props) => {
                     }}
                 />
             </form>
-        </div>
+           
+            </Paper>
+            </formWrapper>
+           
+            </div>
+       
     )
 }
 

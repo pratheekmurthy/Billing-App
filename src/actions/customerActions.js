@@ -61,7 +61,10 @@ export const startGetCust = (id) => {
             if(result.hasOwnProperty('errors')) {
                 alert(result.errors)
             }else{
-                alert(result.name)
+                alert(`Name - ${result.name}
+                Email - ${result.email}
+                Mobile - ${result.mobile}
+                Profile created on - ${result.createdAt}`)
             }
         })
         .catch((err) => {

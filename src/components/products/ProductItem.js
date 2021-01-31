@@ -1,5 +1,8 @@
 import React,{ useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import EditIcon from '@material-ui/icons/Edit'
+import DeleteIcon from '@material-ui/icons/Delete'
+import VisibilityIcon from '@material-ui/icons/Visibility';
 import Modal from 'react-modal'
 import { startDeleteProd, startGetProd } from '../../actions/products-actions'
 import ProductForm from './ProductForm'
@@ -35,17 +38,16 @@ const ProductItem = (props) => {
         <>
             {products.map((product) => {
                 return <tr key={product._id}>
-                    <td> {product.name} </td>
-                    <td> {product.price} </td>
+                    <td> {product.name} -{product.price} </td>
                     <td><button onClick={() => {
                         dispatch(startGetProd(product._id))
-                    }}>View</button></td>
-                    <td><button onClick={() => {
+                    }}><VisibilityIcon/></button>
+                    <button onClick={() => {
                         handleEdit(product)
-                    }}>Edit</button></td>
-                    <td><button onClick={() => {
+                    }}><EditIcon/></button>
+                   <button onClick={() => {
                         deleteProduct(product._id)
-                    }}>Delete</button></td>
+                    }}><DeleteIcon/></button></td>
                 </tr>
             })}
 

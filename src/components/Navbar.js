@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link,Route} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
+import {StyledLink} from '../styling/app-styled'
 import {toggleStatus} from '../actions/loginAction'
 import Home from './Home'
 import Login from './Login'
@@ -9,6 +10,7 @@ import Account from './Account'
 import Customers from '../components/customers/Customers'
 import swal from 'sweetalert'
 import ProductsContainer from './products/ProductsContainer'
+import Billing from './Billoperations/BillingPage'
 
 const Navbar=(props)=>{
     const loggedIn = useSelector(state => state.log)
@@ -19,22 +21,25 @@ const Navbar=(props)=>{
        <div>
        {loggedIn ? (
         <div>
-            <Link to="/">Home</Link>|
-            <Link to="/account">Account</Link>|
-            <Link to="/customers">Customers</Link>|
-            <Link to="/products">Products</Link>|
-            <Link to="/" onClick={()=>{
+            <StyledLink to="/">Home</StyledLink>|
+            <StyledLink to="/account">Account</StyledLink>|
+            <StyledLink to="/customers">Customers</StyledLink>|
+            <StyledLink to="/products">Products</StyledLink>|
+            <StyledLink to="/billing">Billing</StyledLink>|
+            <StyledLink to="/" onClick={()=>{
                  localStorage.removeItem('token')
                  dispatch(toggleStatus())
                  swal("Cool!", "You have logged out successfully!", "success")
-            }}>logout</Link>
+            }}>logout</StyledLink>
         </div>)
         :
         (
         <div>
-             <Link to="/">Home</Link>|
-            <Link to="register">Register</Link>|
-            <Link to="/login">LogIn</Link></div>)}
+             <StyledLink to="/">Home</StyledLink>|
+            
+            <StyledLink to="register">Register</StyledLink>|
+            <StyledLink to="/login">LogIn</StyledLink></div>)}
+            
         
        </div>
         <div>
@@ -44,6 +49,7 @@ const Navbar=(props)=>{
             <Route path="/Account"  component={Account} exact={true}/>
             <Route path="/customers"  component={Customers} exact={true}/>
             <Route path="/products"  component={ProductsContainer} exact={true}/>
+            <Route path="/billing" component={Billing} exact={true} />
             
         </div>
     </div>

@@ -9,9 +9,9 @@ import { startGetAllProd } from '../../actions/products-actions'
 const Customers =(props)=>{
     const dispatch =useDispatch()
 
-    useEffect(()=>{
-        dispatch(startGetAllCust)
-    },[])
+    // useEffect(()=>{
+    //     dispatch(startGetAllCust)
+    // },[])
 
 
 

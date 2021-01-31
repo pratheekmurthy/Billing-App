@@ -1,5 +1,7 @@
 import React,{useEffect} from 'react'
 import {useDispatch} from 'react-redux'
+import {LinkWrapper, Wrapper } from '../styling/app-styled'
+
 import {toggleStatus} from '../actions/loginAction'
 import Navbar from './Navbar'
 
@@ -15,10 +17,15 @@ const App=(props)=>{
   },[])
 
 
-  return <div>
-    <h1>Billing App</h1>
+  return(
+    <div >
+    <Wrapper>
+      <LinkWrapper>
     <Navbar/>
-  </div>
+    </LinkWrapper>
+    </Wrapper>
+    </div>
+  )
 }
 
 export default App;

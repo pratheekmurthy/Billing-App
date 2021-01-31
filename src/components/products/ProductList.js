@@ -13,15 +13,11 @@ const ProductsList = (props) => {
                 <p>No products found</p>
             ) : (
                 <div>
-                <h2>No of Products - { products.length } </h2>
-                <table border='1'>
+                <h3>No of Products - { products.length } </h3>
+                <table >
                     <thead>
                         <tr>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>View</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                        <th>Product Name</th>
                         </tr>
                     </thead>
                     <tbody>
