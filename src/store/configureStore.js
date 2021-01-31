@@ -3,11 +3,17 @@ import thunk from 'redux-thunk'
 import logReducer from '../reducers/logReducer'
 import customersReducer from '../reducers/customerReducer'
 import productsReducer from '../reducers/productsReducer'
+import {currentBillReducer,allBillReducer,lineItems} from '../reducers/billReducer'
+
 
 const root = {
     log : logReducer,
     customers: customersReducer,
-    products: productsReducer
+    products: productsReducer,
+    customer: customersReducer,
+    lineItem: lineItems,
+    allBill: allBillReducer,
+    currentBill: currentBillReducer
 }
 
 const configureStore =()=>{

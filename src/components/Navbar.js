@@ -10,7 +10,7 @@ import Account from './Account'
 import Customers from '../components/customers/Customers'
 import swal from 'sweetalert'
 import ProductsContainer from './products/ProductsContainer'
-import Billing from './Billoperations/BillingPage'
+import Billgenerator from './Billoperations/Billgenerator'
 
 const Navbar=(props)=>{
     const loggedIn = useSelector(state => state.log)
@@ -49,7 +49,7 @@ const Navbar=(props)=>{
             <Route path="/Account"  component={Account} exact={true}/>
             <Route path="/customers"  component={Customers} exact={true}/>
             <Route path="/products"  component={ProductsContainer} exact={true}/>
-            <Route path="/billing" component={Billing} exact={true} />
+            <Route path="/billing" component={Billgenerator} exact={true} />
             
         </div>
     </div>
