@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-
 import { startGetCust, startDeleteCust } from '../../actions/customerActions'
 import Modal from 'react-modal'
 import EditIcon from '@material-ui/icons/Edit'

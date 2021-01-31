@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {startGetAllBill} from '../../actions/billAction'
+import Modal from 'react-modal'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import DeleteIcon from '@material-ui/icons/Delete'
 

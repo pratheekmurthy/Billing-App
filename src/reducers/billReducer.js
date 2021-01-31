@@ -26,6 +26,11 @@ const currentBillinitialState = [];
     case "ADD_BILL": {
       return [{ ...action.payload }];
     }
+    case 'DELETE_BILL' :{
+      return state.filter((bill)=>{
+        return bill._id =! action.payload._id
+      })
+    }
     default: {
       return [...state];
     }
@@ -44,4 +49,6 @@ export const allBillReducer = (state = initialallBill, action) => {
     }
   }
 }
+
+
 
