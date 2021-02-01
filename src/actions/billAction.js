@@ -63,23 +63,23 @@ export const startGetAllBill = () => {
   };
 };
 
-// delete a bill
 const deleteBill = (data) => {
-    return { type: "DELETE_BILL", payload: data };
-  };
+  return { type: "DELETE_BILL", payload: data };
+};
 export const startDeleteBill = (id) => {
-    return (dispatch) => {
-      axios
-        .delete(`/bills/${id}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then((response) => {
-          const result = response.data;
-          dispatch(deleteBill(result));
-          swal("hey", "you have removed this bill successfully", "success");
-        })
-        .catch((err) => alert(err.message));
-    };
+  return (dispatch) => {
+    axios
+      .delete(`/bills/${id}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((response) => {
+        const result = response.data;
+        dispatch(deleteBill(result));
+        swal("hey", "you have removed this bill successfully", "success");
+      })
+      .catch((err) => alert(err.message));
   };
+};
+

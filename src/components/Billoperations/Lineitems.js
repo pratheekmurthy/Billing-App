@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import {addLineItems,CreateBill} from '../../actions/billAction'
 import BillDetails from './BillDetails'
+import Showaddedproduct from './Showaddedproduct'
 import swal from 'sweet-alert'
 
 const Lineitems =(props)=>{
@@ -58,7 +59,8 @@ const Lineitems =(props)=>{
             }
         </select>&nbsp;
         <button onClick={handledecquantiy}>-</button>{quan}<button onClick={handleIncQuantity}>+</button><button onClick={handleAdd}>Add</button><br/>
-        <button onClick={generatebill}>Generate Bill</button>
+        
+        <Showaddedproduct generatebill={generatebill}/>
         <BillDetails />
     </div>)
 
