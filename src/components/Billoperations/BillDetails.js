@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import {startGetAllBill} from '../../actions/billAction'
+import {startGetAllBill,startDeleteBill} from '../../actions/billAction'
 import Modal from 'react-modal'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import DeleteIcon from '@material-ui/icons/Delete'
@@ -14,12 +14,12 @@ const BillDetails =(props)=>{
     const customers = useSelector(state => state.customer)
     const currentBill = useSelector(state => state.currentBill)
     const products = useSelector(state => state.products)
-    const [cart,setCart]= useState([])
+    
 
     const dispatch =useDispatch()
 
-    console.log(allBill)
-
+    
+    let arr1=[];
     let arr =[];
 
     const displayname =(id)=>{
@@ -28,15 +28,24 @@ const BillDetails =(props)=>{
         })
         return arr[0].name;
     }
+    const displayCustomername =(id)=>{
+        arr1 = customers.filter((customer)=>{
+            return customer._id == id
+        })
+        return arr1[0].name
+    }
     
     useEffect(()=>{
         dispatch(startGetAllBill())
-
     },[])
     
-    
+    const removeBill=(id)=>{
+        dispatch(startDeleteBill(id))
+    }
+
    
-    
+        
+
 
     return (<div>
             {
@@ -66,14 +75,20 @@ const BillDetails =(props)=>{
 
                 </div>
             }
-        <h6>All Bills</h6>
-        {
-            allBill.map((bill)=>{
-               return (<li onClick={()=>{
-                //    showBill(bill._id,bill.customer)
-               }}>{bill._id} <button><VisibilityIcon/></button><button><DeleteIcon/></button></li>)
-            })
-        }
+            {
+                allBill && <div>
+                     <h6>All Bills</h6>
+                {
+                    allBill.map((bill)=>{
+                    return (<li onClick={()=>{
+                        //    showBill(bill._id,bill.customer)
+                    }}>{displayCustomername(bill.customer)} - {bill._id} <button><VisibilityIcon/></button><button onClick={()=>{
+                        removeBill(bill._id)
+                    }}><DeleteIcon/></button></li>)
+                    })
+            }
+            </div>
+            }
         
     </div>)
 }
