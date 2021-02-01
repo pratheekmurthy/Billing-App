@@ -50,3 +50,24 @@ export const loginformSubmit =(data,handleRedirect)=>{
     export const toggleStatus=()=>{
     return {type : 'TOGGLE_STATE'}
 }
+
+//admin acccount
+const adminAccount = (data) => {
+    return { type: "ADD_ADMIN", payload: data };
+  };
+  
+  export const startGetAccount = () => {
+    return (dispatch) => {
+      axios
+        .get("/users/account", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((response) => {
+          const result = response.data;
+          dispatch(adminAccount(result));
+        })
+        .catch((err) => alert(err.message));
+    };
+  };

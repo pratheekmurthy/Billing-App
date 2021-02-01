@@ -1,6 +1,6 @@
 const initialStateValue = []
 
-const productsReducer = (state = initialStateValue, action) => {
+export const productsReducer = (state = initialStateValue, action) => {
     switch(action.type) {
         case 'ALL_PROD': {
             return [...action.payload]
@@ -28,4 +28,15 @@ const productsReducer = (state = initialStateValue, action) => {
     }
 }
 
-export default productsReducer
+const accountInitialState = {}
+
+export const accountReducer=(state = accountInitialState,action)=>{
+    switch(action.type){
+        case 'ADD_ADMIN':{
+            return [action.payload]
+        }
+        default : {
+            return [state]
+        }
+    }
+}

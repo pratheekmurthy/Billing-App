@@ -1,6 +1,6 @@
 const initialState = false
 
-const logReducer=(state=initialState,action)=>{
+export const logReducer=(state=initialState,action)=>{
     switch(action.type){
         case 'TOGGLE_STATE':{
             return !state;
@@ -12,6 +12,15 @@ const logReducer=(state=initialState,action)=>{
 
 }
 
+const accountInitialState = {}
 
-
-export default logReducer
+export const accountReducer=(state = accountInitialState,action)=>{
+    switch(action.type){
+        case 'ADD_ADMIN':{
+            return [action.payload]
+        }
+        default : {
+            return [state]
+        }
+    }
+}

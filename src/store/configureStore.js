@@ -1,8 +1,8 @@
 import {combineReducers,createStore,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
-import logReducer from '../reducers/logReducer'
+import {logReducer,accountReducer} from '../reducers/logReducer'
 import customersReducer from '../reducers/customerReducer'
-import productsReducer from '../reducers/productsReducer'
+import {productsReducer} from '../reducers/productsReducer'
 import {currentBillReducer,allBillReducer,lineItems} from '../reducers/billReducer'
 
 
@@ -13,7 +13,8 @@ const root = {
     customer: customersReducer,
     lineItem: lineItems,
     allBill: allBillReducer,
-    currentBill: currentBillReducer
+    currentBill: currentBillReducer,
+    profile :accountReducer
 }
 
 const configureStore =()=>{

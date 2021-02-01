@@ -23,11 +23,11 @@ const Navbar=(props)=>{
        {loggedIn ? (
         <div>
             
-            <StyledLink to="/">Home</StyledLink>|
-            <StyledLink to="/account">Profile</StyledLink>|
-            <StyledLink to="/customers">Customers</StyledLink>|
-            <StyledLink to="/products">Products</StyledLink>|
-            <StyledLink to="/billing">Billing</StyledLink>|
+            <StyledLink to="/">Home</StyledLink>&nbsp;
+            <StyledLink to="/account">Profile</StyledLink>&nbsp;
+            <StyledLink to="/customers">Customers</StyledLink>&nbsp;
+            <StyledLink to="/products">Products</StyledLink>&nbsp;
+            <StyledLink to="/billing">Billing</StyledLink>&nbsp;
             <StyledLink to="/" onClick={()=>{
                  localStorage.removeItem('token')
                  dispatch(toggleStatus())
@@ -37,9 +37,8 @@ const Navbar=(props)=>{
         :
         (
         <div>
-             <StyledLink to="/">Home</StyledLink>|
-            
-            <StyledLink to="register">Register</StyledLink>|
+             <StyledLink to="/">Home</StyledLink>&nbsp;
+            <StyledLink to="register">Register</StyledLink>&nbsp;
             <StyledLink to="/login">LogIn</StyledLink></div>)}
             
         
