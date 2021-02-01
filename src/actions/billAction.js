@@ -1,5 +1,5 @@
 import axios from "../config/axios";
-import swal from 'sweet-alert'
+import swal from 'sweetalert'
 
 
 // Add lineItems
@@ -37,7 +37,7 @@ export const CreateBill = (data) => {
         const result = response.data;
         dispatch(addBill(result));
         dispatch(emptyLineItems());
-        alert("bill generated")
+        swal("Super", "Invoice generated", "success");
       })
       .catch((err) => alert(err.message));
   };

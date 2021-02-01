@@ -3,7 +3,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import {addLineItems,CreateBill} from '../../actions/billAction'
 import BillDetails from './BillDetails'
 import Showaddedproduct from './Showaddedproduct'
-import swal from 'sweet-alert'
+import swal from 'sweetalert'
 
 const Lineitems =(props)=>{
     const {customerId,date} = props
@@ -33,6 +33,8 @@ const Lineitems =(props)=>{
             dispatch(addLineItems(data))
             setquantity(0)
             setproductId("")
+           
+            
             
         }
 

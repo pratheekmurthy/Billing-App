@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {startGetAllBill,startDeleteBill} from '../../actions/billAction'
 import Modal from 'react-modal'
+import AllBill from './AllBill'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import DeleteIcon from '@material-ui/icons/Delete'
 
@@ -18,34 +19,18 @@ const BillDetails =(props)=>{
 
     const dispatch =useDispatch()
 
+    let arr=[]
     
-    let arr1=[];
-    let arr =[];
-
+    useEffect(()=>{
+        dispatch(startGetAllBill())
+    },[])
+    
     const displayname =(id)=>{
         arr = products.filter((product)=>{
             return product._id == id
         })
         return arr[0].name;
     }
-    const displayCustomername =(id)=>{
-        arr1 = customers.filter((customer)=>{
-            return customer._id == id
-        })
-        return arr1[0].name
-    }
-    
-    useEffect(()=>{
-        dispatch(startGetAllBill())
-    },[])
-    
-    const removeBill=(id)=>{
-        dispatch(startDeleteBill(id))
-    }
-
-   
-        
-
 
     return (<div>
             {
@@ -72,23 +57,9 @@ const BillDetails =(props)=>{
                     </table>
                     
                     <p>Total Amount -{currentBill[0].total}</p>
-
                 </div>
             }
-            {
-                allBill && <div>
-                     <h6>All Bills</h6>
-                {
-                    allBill.map((bill)=>{
-                    return (<li onClick={()=>{
-                        //    showBill(bill._id,bill.customer)
-                    }}>{displayCustomername(bill.customer)} - {bill._id} <button><VisibilityIcon/></button><button onClick={()=>{
-                        removeBill(bill._id)
-                    }}><DeleteIcon/></button></li>)
-                    })
-            }
-            </div>
-            }
+            <AllBill/>
         
     </div>)
 }

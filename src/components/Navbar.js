@@ -1,5 +1,6 @@
 import React from 'react'
-import {Link,Route} from 'react-router-dom'
+import {Link,Route,Switch} from 'react-router-dom'
+import PrivateRoute from './PrivateRoute'
 import {useSelector,useDispatch} from 'react-redux'
 import {StyledLink} from '../styling/app-styled'
 import {toggleStatus} from '../actions/loginAction'
@@ -21,8 +22,9 @@ const Navbar=(props)=>{
        <div>
        {loggedIn ? (
         <div>
+            
             <StyledLink to="/">Home</StyledLink>|
-            <StyledLink to="/account">Account</StyledLink>|
+            <StyledLink to="/account">Profile</StyledLink>|
             <StyledLink to="/customers">Customers</StyledLink>|
             <StyledLink to="/products">Products</StyledLink>|
             <StyledLink to="/billing">Billing</StyledLink>|
@@ -43,14 +45,15 @@ const Navbar=(props)=>{
         
        </div>
         <div>
+        <Switch>
             <Route path="/" component={Home} exact={true}/>
             <Route path="/register" component={Register} exact={true}/>
             <Route path="/login"  component={Login} exact={true}/>
-            <Route path="/Account"  component={Account} exact={true}/>
-            <Route path="/customers"  component={Customers} exact={true}/>
-            <Route path="/products"  component={ProductsContainer} exact={true}/>
-            <Route path="/billing" component={Billgenerator} exact={true} />
-            
+            <PrivateRoute path="/Account"  component={Account} exact={true}/>
+            <PrivateRoute path="/customers"  component={Customers} exact={true}/>
+            <PrivateRoute path="/products"  component={ProductsContainer} exact={true}/>
+            <PrivateRoute path="/billing" component={Billgenerator} exact={true} />
+        </Switch>   
         </div>
     </div>
     )
