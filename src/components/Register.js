@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {useDispatch} from 'react-redux'
 import validator from 'validator'
 import {formSubmit} from '../actions/loginAction'
+import {TextField} from '@material-ui/core'
 
 const Register=(props)=>{
     const[userName,setUsername] = useState("")
@@ -80,16 +81,22 @@ const Register=(props)=>{
 
 
     return (<div>
-        <button onClick={handleBack}>Back</button>
+        <button onClick={handleBack} class="btn btn-danger">Back</button>
+        <div className="registerBox">
+        <div class="card">
+            <div class="card-body">
+                <h3>Register</h3>
         <form onSubmit={handleSubmit}>
-            <input type="text" value={userName} placeholder="Enter your Name" onChange={handleUsername}/>{formErrors.userName && <span> { formErrors.userName } </span>}<br/>
-            <input type="email" value={email} placeholder="Enter your Email" onChange={handleEmail}/>{formErrors.email && <span> { formErrors.email } </span>}<br/>
-            <input type="password" value={password} placeholder="Enter your password" onChange={handlepassword}/>{formErrors.password && <span> { formErrors.password } </span>}<br/>
-            <input type="text" value={businessname} placeholder="Enter your business name" onChange={handleBusiness}/>{formErrors.businessName && <span> { formErrors.businessName } </span>}<br/>
-            <input type="text" value={address} placeholder="Enter your address" onChange={handleAddress}/>{formErrors.address && <span> { formErrors.address } </span>}<br/>
-            <button onClick={handleCancel}>Cancel</button><input type="submit" value="Register"/>
-            
+            <TextField  id="outlined-basic" label="Enter your name" variant="outlined" type="text" value={userName} placeholder="Enter your Name" onChange={handleUsername}/>{formErrors.userName && <span> { formErrors.userName } </span>}<br/>
+            <TextField  id="outlined-basic" label="Enter your Email" variant="outlined" type="email" value={email} placeholder="Enter your Email" onChange={handleEmail}/>{formErrors.email && <span> { formErrors.email } </span>}<br/>
+            <TextField  id="outlined-basic" label="Enter your password" variant="outlined" type="password" value={password} placeholder="Enter your password" onChange={handlepassword}/>{formErrors.password && <span> { formErrors.password } </span>}<br/>
+            <TextField  id="outlined-basic" label="Enter your business name" variant="outlined" type="text" value={businessname} placeholder="Enter your business name" onChange={handleBusiness}/>{formErrors.businessName && <span> { formErrors.businessName } </span>}<br/>
+            <TextField  id="outlined-basic" label="Enter your address" variant="outlined" type="text" value={address} placeholder="Enter your address" onChange={handleAddress}/>{formErrors.address && <span> { formErrors.address } </span>}<br/>
+            <br/><button onClick={handleCancel} class="btn btn-danger">Cancel</button><input class="btn btn-success" type="submit" value="Register"/>
         </form>
+        </div>
+        </div>
+        </div>
     </div>)
 }
 

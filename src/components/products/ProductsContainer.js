@@ -13,7 +13,7 @@ const ProductsContainer = (props) => {
     // },[])
 
     return (
-        <div>
+        <div className="container">
             <ProductsList />
             <ProductForm />
         </div>

@@ -41,7 +41,6 @@ const Navbar=(props)=>{
             <StyledLink to="register">Register</StyledLink>&nbsp;
             <StyledLink to="/login">LogIn</StyledLink></div>)}
             
-        
        </div>
         <div>
         <Switch>

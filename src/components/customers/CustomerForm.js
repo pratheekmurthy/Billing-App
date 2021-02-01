@@ -89,7 +89,8 @@ const CustomerForm = (props) => {
 
     return (
         <div>
-            <h1>Add Customer</h1>
+            <br/>
+            <h3>Add Customer</h3>
             <form onSubmit={handleSubmit}>
                 <input 
                     type='text'

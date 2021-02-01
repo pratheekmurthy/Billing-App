@@ -1,7 +1,6 @@
 import React,{useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {LinkWrapper, Wrapper } from '../styling/app-styled'
-
 import {toggleStatus} from '../actions/loginAction'
 import Navbar from './Navbar'
 
@@ -18,7 +17,7 @@ const App=(props)=>{
 
 
   return(
-    <div >
+    <div>
     <Wrapper>
       <LinkWrapper>
     <Navbar/>

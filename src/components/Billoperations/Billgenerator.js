@@ -15,7 +15,7 @@ const Billgenerator =(props)=>{
 
    
 
-    return (<div>
+    return (<div className="container">
          <input type="date" value={date} onChange={handleDate}/><br/><br/>
         <select value={customerId} onChange={handleCustomer}>
             <option value="">Select Customer</option>

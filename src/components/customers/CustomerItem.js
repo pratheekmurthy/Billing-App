@@ -39,18 +39,23 @@ const CustomerItem = (props) => {
     return (
             <>
             {customers.map((customer) => {
-                return <tr key={customer._id}>
-                            <td> {customer.name} </td>
-                            <td><button  onClick={() => {
-                                dispatch(startGetCust(customer._id))
-                            }}><VisibilityIcon/></button></td>
-                            <td><button onClick={() => {
+                return (<div className="customercard">
+                        <div class="card" style={{width: "20rem"}}>
+                            <img src="./logo.jpg" class="card-img-top" alt="..."/>
+                            <div class="card-body">
+                            <h5 class="card-title">{customer.name}</h5>
+                            <p>email :{customer.email}</p>
+                            <p>Mobile:{customer.mobile}</p>
+                            <button onClick={() => {
                                 handleEdit(customer)
-                            }}><EditIcon/></button></td>
-                            <td><button onClick={() => {
+                            }}><EditIcon/></button>
+                            <button onClick={() => {
                                 deleteCustomer(customer._id)
-                            }}><DeleteIcon/></button></td>
-                        </tr>
+                            }}><DeleteIcon/></button>
+                            </div>
+                        </div>
+                </div>
+                )
             })}
 
             {open && (
