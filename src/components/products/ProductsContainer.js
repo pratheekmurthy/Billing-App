@@ -15,6 +15,7 @@ const ProductsContainer = (props) => {
     return (
         <div className="container">
             <ProductsList />
+            <br/>
             <ProductForm />
         </div>
     )

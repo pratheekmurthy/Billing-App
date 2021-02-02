@@ -28,7 +28,7 @@ const Showaddedproduct =(props)=>{
         <br/>
        {
            lineItem.length > 0 ? (<div>
-               <table border="1">
+               <table border="1" className="table">
                  <thead> <tr><th>Product Name</th><th>Price</th><th>Quantity</th><th>sub Total</th><th>Remove</th></tr></thead>
                    <tbody>
                             {
@@ -41,7 +41,7 @@ const Showaddedproduct =(props)=>{
                                             <td>{arr[0].price * item.quantity}</td>
                                             <td><button onClick={()=>{
                                                 removeItem(item.product)
-                                            }}>Remove</button></td>
+                                            }} className="btn btn-danger">Remove</button></td>
                                         </tr>
                                     )
                                     
@@ -50,7 +50,7 @@ const Showaddedproduct =(props)=>{
                             }
                    </tbody>
                </table><br/>
-               <button onClick={generatebill}>Generate Bill</button>
+               <button onClick={generatebill} className="btn btn-primary">Generate Bill</button>
            </div>):(<div></div>)
            }
        

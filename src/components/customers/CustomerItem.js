@@ -38,6 +38,7 @@ const CustomerItem = (props) => {
 
     return (
             <>
+            <div className="customercard">
             {customers.map((customer) => {
                 return (<div className="customercard">
                         <div class="card" style={{width: "20rem"}}>
@@ -57,6 +58,7 @@ const CustomerItem = (props) => {
                 </div>
                 )
             })}
+            </div>
 
             {open && (
                     <Modal isOpen={open}>

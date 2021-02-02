@@ -32,26 +32,34 @@ const AllBill =(props)=>{
         dispatch(startDeleteBill(id))
     }
 
-    return (<div>
-        <h3>All Bills</h3><hr/>
+    return (<div><br/>
+        <h3>All Bills</h3>
+        <div className="customercard">
         {
             allBills.map((bill)=>{
                 return(<div>
-                    <p>Date : {bill.date.slice(0, bill.date.indexOf("T")).split("-").join("/")}</p>
-                    <h4>Customer Name : {displayCustomername(bill.customer)}</h4>
-                    <p>Purchase Details</p>
-                    {
-                        bill.lineItems.map((item)=>{
-                            return <li>{displayname(item.product)} -{item.price}rs * {item.quantity} = {item.subTotal}</li>
-                        })
-                    }
-                    <p>Total Bill Amount - {bill.total}rs</p>
-                    <button onClick={()=>{
-                        removeBill(bill._id)}}>Delete Bill</button><hr/>
+                    <div className="customercard">
+                        <div class="card" style={{width: "20rem"}}>
+                            <img src="./billlogo.jpg" class="card-img-top" alt="..."/>
+                            <div class="card-body">
+                            <h5 class="card-title">Customer Name : {displayCustomername(bill.customer)}</h5>
+                            <p>Date : {bill.date.slice(0, bill.date.indexOf("T")).split("-").join("/")}</p>
+                            <p>Purchase Details</p>
+                            {
+                            bill.lineItems.map((item)=>{
+                                return <li>{displayname(item.product)} -{item.price}rs * {item.quantity} = {item.subTotal}</li>
+                            })
+                            }
+                        <p>Total Bill Amount - {bill.total}rs</p>
+                        <button onClick={()=>{
+                            removeBill(bill._id)}} className="btn btn-danger">Delete Bill</button>
+                    </div>
+                    </div>
+                    </div>
                 </div>)
                 
             })
-        }
+        }</div>
 
     </div>)
 }

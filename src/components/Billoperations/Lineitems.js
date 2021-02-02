@@ -8,7 +8,7 @@ import swal from 'sweetalert'
 const Lineitems =(props)=>{
     const {customerId,date} = props
     const [productId,setproductId] = useState("")
-    const [quan,setquantity] = useState(0)
+    const [quan,setquantity] = useState(1)
     
 
     const lineitems = useSelector(state => state.lineItem)
@@ -19,7 +19,7 @@ const Lineitems =(props)=>{
 
     const handleProduct =(e)=> setproductId(e.target.value)
     const handledecquantiy =(e)=>{
-        if(quan >0){
+        if(quan >1){
             setquantity(quan -1)
         }
     }
@@ -60,8 +60,9 @@ const Lineitems =(props)=>{
                 })
             }
         </select>&nbsp;
-        <button onClick={handledecquantiy}>-</button>{quan}<button onClick={handleIncQuantity}>+</button><button onClick={handleAdd}>Add</button><br/>
-        
+        {
+            productId.length >0 ? (<div><button onClick={handledecquantiy} class="btn btn-light">-</button>{quan}<button onClick={handleIncQuantity} class="btn btn-light">+</button><button onClick={handleAdd}>Add</button><br/></div>):(<div></div>)
+        }
         <Showaddedproduct generatebill={generatebill}/>
         <BillDetails />
     </div>)

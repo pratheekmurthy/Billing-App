@@ -53,13 +53,11 @@ const BillDetails =(props)=>{
                             })
                         }
                         </tbody>
-
                     </table>
-                    
                     <p>Total Amount -{currentBill[0].total}</p>
                 </div>
             }
-            <AllBill/>
+           
         
     </div>)
 }

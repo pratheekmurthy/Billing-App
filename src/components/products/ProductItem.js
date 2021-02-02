@@ -33,24 +33,29 @@ const ProductItem = (props) => {
         setPrice(product.price)
     }
 
-    return (<div>
+    return (<div >
        
-        <>
+        <><div className="customercard">
             {products.map((product) => {
-                return <tr key={product._id}>
-                    <td> {product.name} -{product.price} </td>
-                    <td><button onClick={() => {
-                        dispatch(startGetProd(product._id))
-                    }}><VisibilityIcon/></button>
-                    <button onClick={() => {
-                        handleEdit(product)
-                    }}><EditIcon/></button>
-                   <button onClick={() => {
-                        deleteProduct(product._id)
-                    }}><DeleteIcon/></button></td>
-                </tr>
-            })}
-
+                return (
+                        <div className="customercard">
+                        <div class="card" style={{width: "20rem"}}>
+                            <img src="./foodlogo.png" class="card-img-top" alt="..."/>
+                            <div class="card-body">
+                            <h5 class="card-title">{product.name}</h5>
+                            <p>Price :{product.price}rs</p>
+                            <button onClick={() => {
+                                handleEdit(product)
+                            }}><EditIcon/></button>
+                            <button onClick={() => {
+                                deleteProduct(product._id)
+                            }}><DeleteIcon/></button>
+                            </div>
+                        </div>
+                </div>
+                )
+            })}</div>
+            <div>
                 {open && (
                     <Modal isOpen={open}>
                     <ProductForm
@@ -61,11 +66,27 @@ const ProductItem = (props) => {
                     />
                     <button onClick={() => {
                         handleToggle()
-                    }}>close</button>
+                    }} className="btn-danger">close</button>
                     </Modal>
                 )}
+                </div>
         </>
+        
     </div>)
 }
 
 export default ProductItem
+
+
+{/* <tr key={product._id}>
+                    <td> {product.name} -{product.price} </td>
+                    <td><button onClick={() => {
+                        dispatch(startGetProd(product._id))
+                    }}><VisibilityIcon/></button>
+                    <button onClick={() => {
+                        handleEdit(product)
+                    }}><EditIcon/></button>
+                   <button onClick={() => {
+                        deleteProduct(product._id)
+                    }}><DeleteIcon/></button></td>
+                </tr> */}

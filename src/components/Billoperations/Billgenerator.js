@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import {Link} from 'react-router-dom'
+import {StyledLink} from '../../styling/app-styled'
 import {useSelector} from 'react-redux'
 import Lineitems from './Lineitems'
 
@@ -15,7 +17,12 @@ const Billgenerator =(props)=>{
 
    
 
-    return (<div className="container">
+    return (<div>
+            <div className="link">
+            <StyledLink to="/Allbills" >All Bills</StyledLink>
+            </div>
+
+            <div className="container">
          <input type="date" value={date} onChange={handleDate}/><br/><br/>
         <select value={customerId} onChange={handleCustomer}>
             <option value="">Select Customer</option>
@@ -26,8 +33,7 @@ const Billgenerator =(props)=>{
             }
         </select>
        <Lineitems customerId={customerId} date={date}/>
-        
-
+       </div>
     </div>)
 }
 

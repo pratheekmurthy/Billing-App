@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import {Paper,Box,Button,TextField} from '@material-ui/core' 
 import validator from 'validator'
+
 import { startEditCust, startPostCust } from '../../actions/customerActions'
 
 const CustomerForm = (props) => {
@@ -88,30 +90,28 @@ const CustomerForm = (props) => {
     }
 
     return (
-        <div>
+        <div className="productform">
+        <Paper>
             <br/>
             <h3>Add Customer</h3>
             <form onSubmit={handleSubmit}>
-                <input 
+            <TextField  id="outlined-basic" label='enter name*' variant="outlined"
                     type='text'
                     name='userName'
                     value={userName}
                     onChange={handleInputChange}
-                    placeholder='enter name*'
                 /><br />
                 {formErrors.userName && <span style={{color:'red'}}> { formErrors.userName } </span>}<br />
 
-                <input 
+                <TextField  id="outlined-basic" label='enter mobile*' variant="outlined"
                     type='text'
                     name='mobile'
                     value={mobile}
                     onChange={handleInputChange}
-                    placeholder='enter mobile*'
                 /><br />
                 {formErrors.mobile && <span style={{color:'red'}}> { formErrors.mobile } </span>}<br />
 
-                <input 
-                    type='email'
+                <TextField  id="outlined-basic" label='enter mobile*' variant="outlined"
                     name='email'
                     value={email}
                     onChange={handleInputChange}
@@ -121,7 +121,7 @@ const CustomerForm = (props) => {
                 
                 <input 
                     type='submit'
-                    value={id ? 'Save' : 'Add'}
+                    value={id ? 'Save' : 'Add'} class="btn btn-primary"
                 />
 
                 <input 
@@ -129,10 +129,13 @@ const CustomerForm = (props) => {
                     value='cancel'
                     onClick={() => {
                         resetForm()
-                    }}
+                    }} class="btn btn-danger"
                 />
             </form>
+            </Paper>
         </div>
+        
+        
     )
 }
 

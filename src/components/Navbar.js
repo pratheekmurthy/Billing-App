@@ -12,6 +12,8 @@ import Customers from '../components/customers/Customers'
 import swal from 'sweetalert'
 import ProductsContainer from './products/ProductsContainer'
 import Billgenerator from './Billoperations/Billgenerator'
+import AllBill from './Billoperations/AllBill'
+import Dashboard from './Dashboard' 
 
 const Navbar=(props)=>{
     const loggedIn = useSelector(state => state.log)
@@ -24,6 +26,7 @@ const Navbar=(props)=>{
         <div>
             
             <StyledLink to="/">Home</StyledLink>&nbsp;
+            <StyledLink to="/dashboard">Dashboard</StyledLink>&nbsp;
             <StyledLink to="/account">Profile</StyledLink>&nbsp;
             <StyledLink to="/customers">Customers</StyledLink>&nbsp;
             <StyledLink to="/products">Products</StyledLink>&nbsp;
@@ -51,6 +54,8 @@ const Navbar=(props)=>{
             <PrivateRoute path="/customers"  component={Customers} exact={true}/>
             <PrivateRoute path="/products"  component={ProductsContainer} exact={true}/>
             <PrivateRoute path="/billing" component={Billgenerator} exact={true} />
+            <PrivateRoute path="/Allbills" component={AllBill} exact={true}/>
+            <PrivateRoute path="/dashboard" component={Dashboard} exact={true}/>
         </Switch>   
         </div>
     </div>

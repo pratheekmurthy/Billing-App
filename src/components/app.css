@@ -24,11 +24,21 @@
 }
 
 .customercard {
+  display: flex;
+  flex-direction: row;
   position: relative;
-}
-
-.display_product_card {
   overflow-y: auto;
   display: grid;
-  grid-template: auto/repeat(4, 1fr);
+  grid-template: auto/repeat(3, 1fr);
+}
+
+.productform {
+  width: 18rem;
+  position: relative;
+  text-align: center;
+}
+
+.link {
+  display: flex;
+  justify-content: left;
 }

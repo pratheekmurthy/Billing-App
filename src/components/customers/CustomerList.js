@@ -14,7 +14,6 @@ const CustomersList = (props) => {
                 <div>
                     <br/>
                 <h4>No of Customers - { customers.length } </h4>
-                    <h5>Customer Name</h5>
                     <CustomerItem />
                 </div>
             )}

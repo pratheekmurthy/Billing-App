@@ -14,16 +14,7 @@ const ProductsList = (props) => {
             ) : (
                 <div>
                 <h3>No of Products - { products.length } </h3>
-                <table >
-                    <thead>
-                        <tr>
-                        <th>Product Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <ProductItem />
-                    </tbody>
-                    </table>
+                <ProductItem />  
                 </div> 
              )}
         </div>
