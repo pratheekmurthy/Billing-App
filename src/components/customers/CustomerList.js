@@ -5,7 +5,7 @@ import CustomerItem from './CustomerItem'
 const CustomersList = (props) => {
     const customers = useSelector(state => state.customers)
     
-
+    console.log(customers);
     return (
         <div >
             {customers.length === 0 ? (

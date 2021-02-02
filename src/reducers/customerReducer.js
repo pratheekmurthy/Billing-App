@@ -6,7 +6,7 @@ const customersReducer = (state = initialStateValue, action) => {
             return [...action.payload]
         }
         case 'ADD_CUST' : {
-            return [action.payload,...state]
+            return [...state,action.payload]
         }
         case 'DELETE_CUST' : {
             return state.filter((customer) => {

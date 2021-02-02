@@ -42,3 +42,17 @@
   display: flex;
   justify-content: left;
 }
+
+.dasboardpapercontainer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow-y: auto;
+  display: grid;
+  grid-template: auto/repeat(4, 1fr);
+}
+
+.dashboardpaper {
+  width: 20rem;
+  text-align: center;
+}

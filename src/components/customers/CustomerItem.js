@@ -4,6 +4,7 @@ import { startGetCust, startDeleteCust } from '../../actions/customerActions'
 import Modal from 'react-modal'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
+import {Paper,Box,Button,TextField} from '@material-ui/core' 
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import CustomerForm from './CustomerForm'
 
@@ -17,6 +18,8 @@ const CustomerItem = (props) => {
 
     const customers = useSelector(state => state.customers)
     const dispatch = useDispatch()
+
+    
 
     const deleteCustomer = (_id) => {
         const confirmRemove = window.confirm('Are you sure ?')
@@ -35,6 +38,8 @@ const CustomerItem = (props) => {
         setMobile(customer.mobile)
         setEmail(customer.email)
     }
+
+    
 
     return (
             <>
