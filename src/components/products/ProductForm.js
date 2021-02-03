@@ -79,7 +79,7 @@ const ProductForm = (props) => {
 
     return (
         <div className="productform">
-            <Paper elevation={3} variant="outlined" square >
+            <Paper elevation={3} variant="outlined" square className='paper_style' >
            
             <h3>Add Product</h3>
             <form onSubmit={handleSubmit}>
@@ -101,7 +101,7 @@ const ProductForm = (props) => {
                 
                 <input 
                     type='submit'
-                    value={id ? 'Save' : 'Add'} class="btn btn-primary"
+                    value={id ? 'Save' : 'Add'} class="btn btn-primary mr-3"
                 />
 
                 <input 
@@ -110,8 +110,9 @@ const ProductForm = (props) => {
                     onClick={() => {
                         resetForm()
                     }}
-                    class="btn btn-danger"
+                    class="btn btn-danger "
                 />
+                
             </form>
            
             </Paper>

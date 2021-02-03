@@ -91,7 +91,7 @@ const CustomerForm = (props) => {
 
     return (
         <div className="productform">
-        <Paper>
+        <Paper className="paper_style">
             <br/>
             <h3>Add Customer</h3>
             <form onSubmit={handleSubmit}>
@@ -121,7 +121,7 @@ const CustomerForm = (props) => {
                 
                 <input 
                     type='submit'
-                    value={id ? 'Save' : 'Add'} class="btn btn-primary"
+                    value={id ? 'Save' : 'Add'} class="btn btn-primary mr-3"
                 />
 
                 <input 

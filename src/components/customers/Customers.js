@@ -14,8 +14,8 @@ const Customers =(props)=>{
 
 
     return (<div className="container">
-            <CustomersList/>
             <CustomerForm />
+            <CustomersList/>
     </div>)
 }
 

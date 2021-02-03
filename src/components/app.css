@@ -30,12 +30,17 @@
   overflow-y: auto;
   display: grid;
   grid-template: auto/repeat(3, 1fr);
+  grid-gap: 2px;
+  margin-bottom: 25px;
 }
 
 .productform {
   width: 18rem;
   position: relative;
   text-align: center;
+  margin-bottom: 25px;
+  margin: 10px;
+  padding-bottom: 10px;
 }
 
 .link {
@@ -60,4 +65,7 @@
 .navbarpaper {
   height: 5rem;
   text-align: end;
+}
+.paper_style {
+  padding: 20px;
 }
