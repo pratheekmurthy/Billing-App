@@ -40,6 +40,11 @@ const Showbills =(props)=>{
     return(<div>
         {
             pbills.length >0 ? (<div>
+                {
+                    pbills.map((bill)=>{
+                        return <li>{bill._id}</li>
+                    })
+                }
 
                 </div>):(<div><p>No transactions made</p></div>)
         }
