@@ -7,12 +7,12 @@ const Showbills =(props)=>{
 
     const bills = useSelector(state => state.allBill)
     const customers = useSelector(state =>state.customers)
-    const products = useSelector(state=>state.product)
+    const products = useSelector(state=>state.products)
 
     const dispatch = useDispatch()
     
-    const arr=[]
-    const arr1=[]
+    let arr=[]
+    let arr1=[]
 
     const pbills = bills.filter((bill)=>{
         return bill.customer === id
@@ -39,10 +39,31 @@ const Showbills =(props)=>{
     
     return(<div>
         {
-            pbills.length >0 ? (<div>
+            pbills.length >0 ? (<div className="customercard">
                 {
                     pbills.map((bill)=>{
-                        return <li>{bill._id}</li>
+                        return (<div>
+                            <div className="customercard">
+                                <div class="card" style={{width: "20rem"}}>
+                                    <img src="/billlogo.jpg" class="card-img-top" alt="..."/>
+                                    <div class="card-body">
+                                    <h5 class="card-title">Customer Name : {displayCustomername(bill.customer)}</h5>
+                                    <p>Date : {bill.date.slice(0, bill.date.indexOf("T")).split("-").join("/")}</p>
+                                    <p>Purchase Details</p>
+                                    {
+                                    bill.lineItems.map((item)=>{
+                                        return <li>{displayname(item.product)} -{item.price}rs * {item.quantity} = {item.subTotal}</li>
+                                    })
+                                    }
+                                <p>Total Bill Amount - {bill.total}rs</p>
+                                <button onClick={()=>{
+                                    removeBill(bill._id)}} className="btn btn-danger">Delete Bill</button>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        )
                     })
                 }
 
