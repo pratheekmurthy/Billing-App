@@ -56,3 +56,8 @@
   width: 20rem;
   text-align: center;
 }
+
+.navbarpaper {
+  height: 5rem;
+  text-align: end;
+}

@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import {Link} from 'react-router-dom'
 import {StyledLink} from '../../styling/app-styled'
 import {useSelector} from 'react-redux'
 import Lineitems from './Lineitems'
@@ -10,7 +9,7 @@ const Billgenerator =(props)=>{
     const [date,setDate] = useState("")
     const [customerId,setCustomerId] = useState("")
     const customers = useSelector(state=>state.customers)
-    const lineitems = useSelector(state => state.lineItem)
+    
     
     const handleDate=(e)=>setDate(e.target.value)
     const handleCustomer =(e)=> setCustomerId(e.target.value)

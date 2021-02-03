@@ -1,18 +1,10 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import {startGetAllBill,startDeleteBill} from '../../actions/billAction'
-import Modal from 'react-modal'
-import AllBill from './AllBill'
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import DeleteIcon from '@material-ui/icons/Delete'
+import {startGetAllBill} from '../../actions/billAction'
+
 
 
 const BillDetails =(props)=>{
-    const {customerId,date}= props
-    const [bill,setBill]= useState({})
-    const lineitems = useSelector(state => state.lineItem)
-    const allBill = useSelector(state => state.allBill)
-    const customers = useSelector(state => state.customer)
     const currentBill = useSelector(state => state.currentBill)
     const products = useSelector(state => state.products)
     
@@ -23,11 +15,11 @@ const BillDetails =(props)=>{
     
     useEffect(()=>{
         dispatch(startGetAllBill())
-    },[])
+    },[dispatch])
     
     const displayname =(id)=>{
         arr = products.filter((product)=>{
-            return product._id == id
+            return product._id === id
         })
         return arr[0].name;
     }
@@ -37,7 +29,7 @@ const BillDetails =(props)=>{
                 currentBill.length >0 && <div>
                     <p>Invoice</p>
                     <p>Bill id -{currentBill[0]._id}</p>
-                    <table border="1">
+                    <table border="1" className="table">
                         <thead><tr><th>Product Name</th><th>Price</th><th>Quantity</th><th>Sub Total</th></tr></thead>
                         <tbody>
                             {

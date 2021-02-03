@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import {Link} from 'react-router-dom'
 import { startGetCust, startDeleteCust } from '../../actions/customerActions'
 import Modal from 'react-modal'
 import EditIcon from '@material-ui/icons/Edit'
@@ -52,6 +53,7 @@ const CustomerItem = (props) => {
                             <h5 class="card-title">{customer.name}</h5>
                             <p>email :{customer.email}</p>
                             <p>Mobile:{customer.mobile}</p>
+                            <Link to= {`/bills/${customer._id}`}>show Bills</Link>
                             <button onClick={() => {
                                 handleEdit(customer)
                             }}><EditIcon/></button>

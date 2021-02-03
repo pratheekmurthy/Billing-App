@@ -13,7 +13,7 @@ const App=(props)=>{
   useEffect(()=>{
     if(localStorage.getItem('token'))
     dispatch(toggleStatus())
-  },[])
+  },[dispatch])
 
 
   return(

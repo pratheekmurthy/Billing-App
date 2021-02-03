@@ -3,7 +3,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import {addLineItems,CreateBill} from '../../actions/billAction'
 import BillDetails from './BillDetails'
 import Showaddedproduct from './Showaddedproduct'
-import swal from 'sweetalert'
+
 
 const Lineitems =(props)=>{
     const {customerId,date} = props
@@ -13,7 +13,7 @@ const Lineitems =(props)=>{
 
     const lineitems = useSelector(state => state.lineItem)
     const products = useSelector(state => state.products)
-    const customers = useSelector(state => state.customers)
+    
     
     const dispatch = useDispatch()
 
@@ -61,7 +61,7 @@ const Lineitems =(props)=>{
             }
         </select>&nbsp;
         {
-            productId.length >0 ? (<div><button onClick={handledecquantiy} class="btn btn-light">-</button>{quan}<button onClick={handleIncQuantity} class="btn btn-light">+</button><button onClick={handleAdd}>Add</button><br/></div>):(<div></div>)
+            productId.length >0 ? (<div><button onClick={handledecquantiy} class="btn btn-light">-</button>{quan}<button onClick={handleIncQuantity} class="btn btn-light">+</button><button onClick={handleAdd} className="btn btn-primary">Add</button><br/></div>):(<div></div>)
         }
         <Showaddedproduct generatebill={generatebill}/>
         <BillDetails />

@@ -1,6 +1,6 @@
 import React from 'react'
-import {useSelector,useDispatch} from 'react-redux'
-import {Button,Grid,TextField,Paper} from '@material-ui/core'
+import {useSelector} from 'react-redux'
+import {Paper} from '@material-ui/core'
 
 const Dashboard =(props)=>{
     const customers = useSelector(state => state.customer)
@@ -17,7 +17,7 @@ const Dashboard =(props)=>{
     //Display name of product from id
     const displayname =(id)=>{
         arr = products.filter((product)=>{
-            return product._id == id
+            return product._id === id
         })
         return arr[0]?.name;
     }
@@ -25,7 +25,7 @@ const Dashboard =(props)=>{
     //Display name of customer from id
     const displayCustomername =(id)=>{
         arr1 = customers.filter((customer)=>{
-            return customer._id == id
+            return customer._id === id
         })
         return arr1[0]?.name
     }
@@ -57,7 +57,7 @@ const Dashboard =(props)=>{
     
 
 
-    return (<div>
+    return (<div><br/>
             <div className="dasboardpapercontainer">
             <div className="dashboardpaper">
             <Paper elevation={3}>

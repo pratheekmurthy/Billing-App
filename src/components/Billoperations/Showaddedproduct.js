@@ -1,7 +1,7 @@
 import React from 'react'
 import {useSelector,useDispatch}  from 'react-redux'
 import {removeLineItems} from '../../actions/billAction'
-import { lineItems } from '../../reducers/billReducer'
+
 
 const Showaddedproduct =(props)=>{
     const {generatebill}= props
@@ -14,7 +14,7 @@ const Showaddedproduct =(props)=>{
     
     const displayName =(id)=>{
         arr = products.filter((product)=>{
-            return product._id == id
+            return product._id === id
         })
         return arr[0].name;
     }

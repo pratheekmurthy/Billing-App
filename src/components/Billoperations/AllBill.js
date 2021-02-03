@@ -10,20 +10,20 @@ const AllBill =(props)=>{
 
     useEffect(()=>{
         dispatch(startGetAllBill())
-    },[allBills])
+    },[dispatch])
 
     let arr1=[];
     let arr =[];
 
     const displayname =(id)=>{
         arr = products.filter((product)=>{
-            return product._id == id
+            return product._id === id
         })
         return arr[0]?.name;
     }
     const displayCustomername =(id)=>{
         arr1 = customers.filter((customer)=>{
-            return customer._id == id
+            return customer._id === id
         })
         return arr1[0]?.name
     }
