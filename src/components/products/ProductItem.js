@@ -2,9 +2,8 @@ import React,{ useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
-import VisibilityIcon from '@material-ui/icons/Visibility';
 import Modal from 'react-modal'
-import { startDeleteProd, startGetProd } from '../../actions/products-actions'
+import { startDeleteProd } from '../../actions/products-actions'
 import ProductForm from './ProductForm'
 
 const ProductItem = (props) => {

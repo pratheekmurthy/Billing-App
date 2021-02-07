@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import {Paper,Box,Button,TextField} from '@material-ui/core' 
+import {Paper,TextField} from '@material-ui/core' 
 import validator from 'validator'
 
 import { startEditCust, startPostCust } from '../../actions/customerActions'

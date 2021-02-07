@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {Link} from 'react-router-dom'
-import { startGetCust, startDeleteCust } from '../../actions/customerActions'
+import { startDeleteCust } from '../../actions/customerActions'
 import Modal from 'react-modal'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
-import {Paper,Box,Button,TextField} from '@material-ui/core' 
-import VisibilityIcon from '@material-ui/icons/Visibility';
 import CustomerForm from './CustomerForm'
 
 const CustomerItem = (props) => {
@@ -15,7 +13,7 @@ const CustomerItem = (props) => {
     const [name, setName] = useState('')
     const [mobile, setMobile] = useState('')
     const [email, setEmail] = useState('')
-    const [candidate,setCandidate]= useState()
+    
 
     const customers = useSelector(state => state.customers)
     const dispatch = useDispatch()

@@ -1,17 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-// import {formWrapper} from '../../styling/app-styled'
-import styled from 'styled-components'
-import {Paper,Box,Button,TextField} from '@material-ui/core' 
+import {Paper,TextField} from '@material-ui/core' 
 import { startEditProd, startPostProd } from '../../actions/products-actions'
 
 
-const formWrapper = styled.div`
-    display : flex;
-    height : 50%;
-    width : 50%;
-    background-color : blue;
-`;
+
 const ProductForm = (props) => {
     const { id, name: prodName , price: prodPrice, handleToggle } = props 
     const dispatch = useDispatch()
